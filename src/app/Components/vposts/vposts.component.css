@@ -1,0 +1,37 @@
+.vpost {
+  width: 100;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vpost_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vpost img {
+  width: 30%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.vpost_btn,
+.vpost_type {
+  font-size: clamp(0.75rem, 0.7054rem + 0.1429vw, 0.875rem);
+  color: #1c2b66;
+}
+
+.vpost__title {
+  font-size: clamp(0.9375rem, 0.8259rem + 0.3571vw, 1.25rem);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.vpost_btn {
+  border: none;
+  background: none;
+  display: flex;
+  outline: none;
+}

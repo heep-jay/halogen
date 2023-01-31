@@ -1,0 +1,31 @@
+<form class="contact-form" (ngSubmit)="onSubmit()">
+  <div class="form_input">
+    <label for="name">Name</label>
+    <input name="formName" type="text" [(ngModel)]="formName" id="name">
+  </div>
+  <div class="form_input">
+    <label for="email">Email</label>
+    <input type="email" [(ngModel)]="formEmail" name="formEmail" id="email">
+  </div>
+  <div class="form_select">
+    <label for="service">Service</label>
+    <div class="select-div">
+      <select #service (change)="onSelectService(service.value)" [(ngModel)]="formSubject" name="service">
+        <option>Select Service</option>
+        <option *ngFor="let item of products" value="{{item.attributes.productName}}">
+          {{item.attributes.productName}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form_input">
+    <label for="">Subject</label>
+    <input name="formSubject" value="{{formSubject}}" id="formSubject" type="text">
+  </div>
+  <div class="form_textarea">
+    <label for="">Message</label>
+    <textarea name="formMessage" [(ngModel)]="formMessage" id="formMessage" rows="10" cols="50"></textarea>
+  </div>
+  <div class="send-btn">
+    <button type="submit">Book an appointment</button>
+  </div>
+</form>

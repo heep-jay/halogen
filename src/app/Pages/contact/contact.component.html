@@ -1,0 +1,76 @@
+<div class="contact">
+  <div class="contact__header">
+    <div class="contact__header-text">
+
+      <h1>CONTACT US</h1>
+    </div>
+  </div>
+  <div class="contact__body">
+    <div class="contact__info">
+      <div class="contact__info-items">
+        <h4>{{name}}</h4>
+        <div class="info-item">
+          <p><mat-icon>location_on</mat-icon>{{add}}</p>
+          <p><mat-icon>mail</mat-icon>{{email}}</p>
+          <p><mat-icon>phone</mat-icon>{{phone}}</p>
+          <div class="info-icon">
+            <img src="/assets/images/fb.png" alt="">
+            <img src="/assets/images/ig.png" alt="">
+            <img src="/assets/images/ig.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="contact__info-items">
+        <h4>Office locations</h4>
+        <div class="info-map">
+          <iframe [src]=" src | safe:'resourceUrl' " class="resp-iframe" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <div class="info-select">
+            <mat-icon>location_on</mat-icon>
+            <select #address (change)="onSelected(address.value)" name="" id="">
+              <option value="{{loc.attributes.locationVal}}" *ngFor="let loc of locations">
+                {{loc.attributes.locationName}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="contact__message">
+      <h4>Send us a message</h4>
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form_input">
+          <label for="name">Name</label>
+          <input name="formName" type="text" [(ngModel)]="formName" id="name">
+        </div>
+        <div class="form_input">
+          <label for="email">Email</label>
+          <input type="email" [(ngModel)]="formEmail" name="formEmail" id="email">
+        </div>
+        <div class="form_select">
+          <label for="service">Service</label>
+          <div class="select-div">
+            <select #service (change)="onSelectService(service.value)" [(ngModel)]="formSubject" name="service">
+              <option>Select Service</option>
+              <option *ngFor="let item of services" value="{{item.attributes.productName}}">
+                {{item.attributes.productName}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form_input">
+          <label for="">Subject</label>
+          <input name="formSubject" value="{{formSubject}}" id="formSubject" type="text">
+        </div>
+        <div class="form_textarea">
+          <label for="">Message</label>
+          <textarea name="formMessage" [(ngModel)]="formMessage" id="formMessage" rows="10" cols="50"></textarea>
+        </div>
+        <div class="send-btn">
+          <button type="submit">Book an appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

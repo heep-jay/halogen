@@ -1,0 +1,32 @@
+<div class="modal-body">
+  <form class="modal-form" (ngSubmit)="onSubmit()">
+
+    <div class="modal-names">
+      <div class="modal__input">
+        <label for="firstname" class="input">FIRST NAME</label>
+        <input type="text" class="nameinput" [(ngModel)]="formFname" id="formFname" name="formFname" />
+      </div>
+      <div class="modal__input">
+        <label for="lastname" class="input">LAST NAME</label>
+        <input type="text" class="nameinput" [(ngModel)]="formLname" id="formLname" name="formLname" />
+      </div>
+
+    </div>
+    <div class="modal__input">
+      <label for="title" class="input">EMAIL ADDRESS</label>
+      <input type="email" class="emailinput" [(ngModel)]="formEmail" name="formEmail" />
+    </div>
+    <div class="modal__input">
+      <label for="message" class="input">MESSAGE</label>
+      <textarea name="message" name="formMessage" [(ngModel)]="formMessage" id="formMessage" class="textarea-input"
+        cols="4" rows="5"> </textarea>
+    </div>
+
+
+    <div class="modal__submit">
+
+      <button type="submit" class="modal__btn-continue">Book Service</button>
+    </div>
+  </form>
+
+</div>
