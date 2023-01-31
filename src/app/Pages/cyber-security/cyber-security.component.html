@@ -51,8 +51,8 @@
 
   </div>
   <div class="more-info">
-    <div [className]="prod.attributes.active ? 'second-section': 'first-section' " *ngFor="let prod of products"
-      id="{{prod.attributes.productId}}">
+    <div [className]="prod.attributes.active ? 'second-section': 'first-section' " id="{{prod.attributes.productId}}"
+      *ngFor="let prod of products">
       <div class="info-img info-img-line">
         <img src="{{prod.attributes.productImage.data.attributes.url}}" alt="" class="info-img" />
       </div>
