@@ -17,6 +17,7 @@ export class CybermenuComponent implements OnInit {
 
   redirect(data: any) {
     window.location.href = data
+    console.log(data)
   }
   toElem() {
     window.location.href = `https://halogenwebsite.vercel.app/other-security-solutions#elem`

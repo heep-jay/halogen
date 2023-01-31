@@ -13,8 +13,9 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
   redirect(data: any) {
+    console.log(data)
+    window.location.href = data
 
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#" + data
     // document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
 
     // window.scrollTo()
