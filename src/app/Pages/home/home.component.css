@@ -211,28 +211,29 @@
   max-width: 280px;
   font-size: 16px;
   padding: 0.2rem 2rem;
-  height: 60px;
+  height: 57px;
   display: flex;
   background: #e6b215;
   justify-content: center;
   flex-direction: row;
   color: #fff;
   align-items: center;
-  border-radius: 19px;
-  gap: 1rem;
+  border-radius: 27px;
+
 }
 
 .halo-icon {
   font-size: 10px;
   color: #1C2B66;
+  margin-left: 20px;
 }
 
-.mat-icon {
+.halo-btn>.mat-icon {
 
-  font-size: 10px;
+  /* font-size: 10px; */
   color: #1C2B66;
   height: fit-content !important;
-  width: fit-content !important;
+  /* width: fit-content !important; */
 }
 
 .halosphere_right-text {
@@ -295,7 +296,7 @@
   height: 15px;
   width: 25.45px;
   border-radius: 0px;
-  top: 10px;
+  top: 7px;
   right: 95px;
   position: absolute;
 }
@@ -304,7 +305,7 @@
   height: 29.48px;
   width: 50.45px;
   border-radius: 0px;
-  top: 0px;
+  top: -10px;
   right: 40%;
   position: absolute;
 }
@@ -323,12 +324,13 @@
 }
 
 .home__halosphere span {
+
   color: #FFCC2A;
 }
 
-.home__halosphere span:hover {
+/* .home__halosphere span:hover {
   color: #eacb66;
-}
+} */
 
 .home__clients {
   width: 100%;
@@ -539,7 +541,7 @@
     height: 15px;
     width: 25.45px;
     border-radius: 0px;
-    top: 10px;
+    top: 3px;
     right: 95px;
     position: absolute;
   }
