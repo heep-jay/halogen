@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   }
   redirect(data: any) {
 
-    window.location.href = "http://localhost:4200/other-security-solutions#" + data
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#" + data
     // document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
 
     // window.scrollTo()

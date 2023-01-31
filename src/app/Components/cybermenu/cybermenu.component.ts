@@ -19,9 +19,9 @@ export class CybermenuComponent implements OnInit {
     window.location.href = data
   }
   toElem() {
-    window.location.href = `http://localhost:4200/other-security-solutions#elem`
+    window.location.href = `https://halogenwebsite.vercel.app/other-security-solutions#elem`
   }
   toIdentitys() {
-    window.location.href = `http://localhost:4200/other-security-solutions#identity`
+    window.location.href = `https://halogenwebsite.vercel.app/other-security-solutions#identity`
   }
 }

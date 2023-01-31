@@ -53,20 +53,20 @@ export class NavbarComponent implements OnInit {
 
   getMenuLinks() {
     this.cybermenusL.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/cyber-security#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
       return this.cybermenusL;
     })
     this.cybermenusR.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/cyber-security#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
       return this.cybermenusR;
     })
     this.menusL.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/other-security-solutions#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/other-security-solutions#${data.attributes.url}`
       console.log(data.attributes.url)
       return this.cybermenusL;
     })
     this.menusR.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/other-security-solutions#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/other-security-solutions#${data.attributes.url}`
       console.log(data.attributes.url)
       return this.cybermenusR;
     })
@@ -89,48 +89,48 @@ export class NavbarComponent implements OnInit {
     this.isCyberToggle = !this.isCyberToggle
   }
   toCyber() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#cyber";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#cyber";
     this.isToggle = false;
     // document.getElementById("suv")?.scrollIntoView({ behavior: "smooth" });
   }
   toEnd() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#endpoint";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#endpoint";
     this.isToggle = false;
   }
   toApp() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#app";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#app";
     this.isToggle = false;
   }
   toCloud() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#cloud";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#cloud";
     this.isToggle = false;
   }
   toEmail() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#email";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#email";
     this.isToggle = false;
   }
   toData() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#data";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#data";
     this.isToggle = false;
   }
   toIdentity() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#identity";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#identity";
     this.isToggle = false;
   }
   toMobile() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#mobile";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#mobile";
     this.isToggle = false;
   }
   toNetwork() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#network";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#network";
     this.isToggle = false;
   }
   toBusiness() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#business";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#business";
     this.isToggle = false;
   }
   toWeb() {
-    window.location.href = "https://halogen-group.vercel.app/cyber-security#critical";
+    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#critical";
     this.isToggle = false;
   }
 
@@ -138,61 +138,61 @@ export class NavbarComponent implements OnInit {
 
 
   toSuv() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#suv";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#suv";
     this.isToggle = false;
     // document.getElementById("suv")?.scrollIntoView({ behavior: "smooth" });
   }
   toElem() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#elem";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#elem";
     this.isToggle = false;
   }
   toAccess() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#access";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#access";
     this.isToggle = false;
   }
   toIden() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#identity";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#identity";
     this.isToggle = false;
   }
   toBus() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#business";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#business";
     this.isToggle = false;
   }
   toMobility() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#mobility";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#mobility";
     this.isToggle = false;
   }
   toEmerge() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#emerge";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#emerge";
     this.isToggle = false;
   }
   toMaritime() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#maritime";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#maritime";
     this.isToggle = false;
   }
   toFreight() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#freight";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#freight";
     this.isToggle = false;
   }
   toExtraction() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#extraction";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#extraction";
     this.isToggle = false;
   }
 
   toCritical() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#critical";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#critical";
     this.isToggle = false;
   }
   toHome() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#home";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#home";
     this.isToggle = false;
   }
   toIntelligence() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#intelligence";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#intelligence";
     this.isToggle = false;
   }
   toTravel() {
-    window.location.href = "https://halogen-group.vercel.app/other-security-solutions#travel";
+    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#travel";
     this.isToggle = false;
   }
 
