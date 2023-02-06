@@ -12,14 +12,14 @@
   }
 
   .megas-menu {
-    width: 100%;
+    width: 90%;
     position: fixed;
     z-index: 900;
-    top: 29.8%;
+    top: 297px;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
-    max-width: 1230px;
+    /* max-width: 1230px; */
     margin: 6rem auto;
     height: fit-content;
     min-height: 600px;
@@ -40,9 +40,10 @@
 
   .menu__row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     align-items: stretch;
-    max-width: 1230px;
+    /* max-width: 1230px; */
+    width: 100%;
     grid-gap: 20px;
     margin: 0 auto;
     padding: 1rem;
@@ -86,6 +87,12 @@
 
   }
 
+  .menu__column ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .menu__column ul li a,
   .menu__column ul li a {
     color: #6F6C90;
@@ -123,7 +130,7 @@
 
   .feature {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.6rem;
     align-items: flex-start;
     cursor: pointer;
   }
