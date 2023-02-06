@@ -34,7 +34,7 @@
 .about__top p,
 .about__info p,
 .about_inner-info p {
-  font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.125rem);
+  font-size: clamp(0.875rem, 0.5625rem + 1vw, 1.025rem);
   text-align: justify;
   line-height: 35px;
 }
@@ -153,7 +153,7 @@
 .mission p,
 .vision p,
 .values p {
-  font-size: clamp(0.75rem, 0.4375rem + 1vw, 1.1rem);
+  font-size: clamp(0.75rem, 0.4375rem + 1vw, 0.95rem);
   line-height: 28px;
   margin-top: 1rem;
 }

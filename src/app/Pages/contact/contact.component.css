@@ -203,6 +203,19 @@
   border: none;
 }
 
+.dg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dg-content p {
+  font-size: 15px;
+  color: #1c2b66;
+  font-weight: 600;
+}
+
 @media screen and (max-width:710px) {
   .contact__body {
     display: flex;

@@ -11,5 +11,11 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  fb() {
+    window.open('https://www.facebook.com/HalogenNGR', '_blank')
+  }
+  insta() {
+    // window.location.href = "https://www.instagram.com/halogen_group/"
+    window.open('https://www.instagram.com/halogen_group', '_blank');
+  }
 }

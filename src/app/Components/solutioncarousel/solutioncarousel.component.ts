@@ -21,6 +21,6 @@ export class SolutioncarouselComponent implements OnInit {
   //   window.location.href = "https://halogen-group.vercel.app/other-security-solutions#phy";
   // }
   redirect(text: string, id: string) {
-    window.location.href = `http://localhost:4200/${text}#${id}`
+    window.location.href = `https://halogenwebsite.vercel.app/${text}#${id}`
   }
 }
