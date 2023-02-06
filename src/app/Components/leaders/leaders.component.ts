@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-leaders',
   templateUrl: './leaders.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LeadersComponent implements OnInit {
   @Input() leader: any
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(content: any) {
+    this.dialog.open(content);
   }
 
 }

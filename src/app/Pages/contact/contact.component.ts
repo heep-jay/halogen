@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+
 
 @Component({
   selector: 'app-contact',
@@ -7,6 +10,7 @@ import { ApiService } from 'src/app/Service/api.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  // toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   selectedAdd = "";
   selectedService = ""
   name: string = ""
@@ -25,8 +29,9 @@ export class ContactComponent implements OnInit {
   formSubject: string = "";
   formMessage: string = "";
   formData: any;
+  test: string[] = []
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public dialog: MatDialog) { }
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.api.getContact().subscribe((data) => {
@@ -34,6 +39,7 @@ export class ContactComponent implements OnInit {
       this.phone = data.attributes.phone
       this.add = data.attributes.address
       this.email = data.attributes.email
+
       // data.attributes.bgImage.data.attributes.url = `http:localhost:1337${data.attributes.bgImage.data.attributes.url}`
       this.bgImage = `http:localhost:1337${data.attributes.bgImage.data.attributes.url}`
       console.log(this.bgImage)
@@ -41,11 +47,22 @@ export class ContactComponent implements OnInit {
     })
     this.api.getProducts().subscribe((data) => {
       this.services = data
+      console.log(data)
+      this.services.map((data: any) => (
+        this.test.push(data.attributes.productName)
+      ))
     })
+    // this.services.map((data: any) => {
+    //   this.test = [...data.attributes.productName]
+    //   console.log(this.test)
+    // })
     this.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5790581126607!2d3.3607143510254534!3d6.574688495221693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b939c0f889bdf%3A0x200104fe47b784aa!2s19b%20Mobolaji%20Bank%20Anthony%20Way%2C%20Onigbongbo%20101233%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1674661675686!5m2!1sen!2sus"
 
-  }
 
+
+
+
+  }
   onSelectService(service: any) {
     this.selectedService = service
     this.formSubject = this.selectedService
@@ -67,7 +84,7 @@ export class ContactComponent implements OnInit {
         "customerEmail": [
           this.formEmail
         ],
-        "subject": this.formSubject
+        "subject": JSON.stringify(this.formSubject)
       },
       "halogenEmailInfo": {
         "name": this.formName,
@@ -84,6 +101,9 @@ export class ContactComponent implements OnInit {
     this.formName = ""
     this.formSubject = ""
     this.formEmail = ""
+  }
+  openDialog(content: any) {
+    this.dialog.open(content);
   }
 }
 

@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/Service/api.service';
   styleUrls: ['./risk.component.css']
 })
 export class RiskComponent implements OnInit {
+  id = ''
   closeResult: string = "";
   risks: any;
   productName: string = "";
@@ -19,6 +20,7 @@ export class RiskComponent implements OnInit {
   banners: any;
   products: any;
   pImage: any;
+  services: string[] = [];
 
 
   constructor(private modalService: NgbModal, private api: ApiService) { }
@@ -26,8 +28,6 @@ export class RiskComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.api.getProductPage(1).subscribe((data) => {
-
-      console.log(data)
       this.risks = data;
       this.productName = data.attributes.productName
       this.productHeader = data.attributes.productHeader
@@ -38,7 +38,9 @@ export class RiskComponent implements OnInit {
       this.productBody4 = data.attributes.productBody4
       this.banners = data.attributes.product_banners.data
       this.products = data.attributes.products.data
-
+      this.products.map((data: any) => (
+        this.services.push(data.attributes.productName)
+      ))
       // this.getProductImg()
       console.log(this.banners)
     })
@@ -69,6 +71,7 @@ export class RiskComponent implements OnInit {
     );
   }
   scrolll(data: any) {
+    console.log(data)
     document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
   }
 

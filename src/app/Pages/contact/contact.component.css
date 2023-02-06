@@ -17,6 +17,9 @@
 
 }
 
+
+
+
 .contact__header-text {
   width: 90%;
   margin: 0 auto;
@@ -154,9 +157,18 @@
   gap: 0.5rem;
 }
 
+.form_select {
+  margin-top: 1rem;
+}
+
+.ng-tns-c133-0 {
+  margin-bottom: 0px !important;
+  padding-bottom: 0rem !important;
+}
+
 .form_input input {
   padding: 0.8rem 1.5rem;
-  border-radius: 32px;
+  border-radius: 9px;
   outline: none;
   border: 1px solid rgba(189, 189, 189, 0.55);
 }
@@ -178,6 +190,7 @@
 
 .form_textarea textarea {
   border-radius: 16px;
+  padding: 1rem;
   outline: none;
   border: 1px solid rgba(189, 189, 189, 0.55);
 }

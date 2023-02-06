@@ -12,8 +12,8 @@ import { ListComponent } from './Page/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { IvyCarouselModule } from 'carousel-angular';
-
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { HomecarouselComponent } from './Components/homecarousel/homecarousel.component';
@@ -49,6 +49,12 @@ import { ClientcarouselComponent } from './Components/clientcarousel/clientcarou
 import { GalleryPageComponent } from './Components/gallery-page/gallery-page.component';
 import { GalleryBoxComponent } from './Components/gallery-box/gallery-box.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
+import { HalogenNavComponent } from './Components/halogen-nav/halogen-nav.component';
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { SecurityTechnologiesComponent } from './Pages/security-technologies/security-technologies.component';
+import { PhysicalSecurityComponent } from './Pages/physical-security/physical-security.component';
+import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
+import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +91,11 @@ import { GalleryComponent } from './Pages/gallery/gallery.component';
     GalleryPageComponent,
     GalleryBoxComponent,
     GalleryComponent,
+    HalogenNavComponent,
+    SecurityTechnologiesComponent,
+    PhysicalSecurityComponent,
+    SecurityEducationComponent,
+    OutsourcingComponent,
 
   ],
   imports: [
@@ -97,7 +108,11 @@ import { GalleryComponent } from './Pages/gallery/gallery.component';
     CommonModule,
     IvyCarouselModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    MatSelectModule,
+    MatDialogModule,
+    NgMultiSelectDropDownModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

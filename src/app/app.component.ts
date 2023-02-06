@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isShowBtn: boolean = false;
   title = 'halogen_website';
-
+  activeMenu: boolean = false;
   ngOnInit(): void {
     window.scrollTo(0, 0);
     // this.win = this.showScrollBtn()
@@ -21,6 +21,9 @@ export class AppComponent {
     };
   }
 
+  toggleMenu() {
+    console.log('toggle')
+  }
   showScrollBtn() {
 
     console.log("abccc")

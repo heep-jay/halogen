@@ -1,44 +1,38 @@
 <nav class="navbar">
   <div class="nav">
-    <div class="nav__logo">
-      <img src="/assets/images/logooo.png" routerLink="/" alt="" class="nav__logo-img">
+    <div class="nav__logo" routerLink="/">
+      <img src="/assets/images/logooo.png" alt="" class="nav__logo-img">
+      Halogen Group
     </div>
     <div class="nav__menu">
-      <ul class="nav__items">
+      <div class="empty-nav">
         <!-- <li>{{}}</li> -->
-        <li class="nav__item"><span>{{aboutUs}}</span>
+        <li class="nav__item" (click)="closeNav()" routerLink="/"><span>Home</span>
+          <div></div>
+        </li>
+        <li class="nav__item" (click)="closeNav()"><span>{{aboutUs}}</span>
           <div></div>
           <ul class="drop-menu">
-            <li routerLink="/{{abtMen.attributes.url}}" *ngFor="let abtMen of aboutmenus">
+            <li routerLink="/{{abtMen.attributes.url}}" (click)="closeNav()" *ngFor="let abtMen of aboutmenus">
               <a><mat-icon>{{abtMen.attributes.icon}}</mat-icon>{{abtMen.attributes.name}}</a>
             </li>
           </ul>
         </li>
-        <li class="nav__item" routerLink="/risk-advisory-and-consulting">{{riskAdv}}<div></div>
+        <li (click)="openMenu($event)" [className]="activeMenu ? 'nav__item toggleNav' : 'nav__item'"><span
+            style="display: flex; align-items: center;">{{otherSec}}
+            <mat-icon>expand_more</mat-icon></span>
+          <div></div>
         </li>
-        <li class="nav__item">
-          <section class="degree">{{cyberSec}}<div class="degree"></div>
-            <div class="hoover">
-              <app-cybermenu [cyberR]="cybermenusR" [cyberL]="cybermenusL"></app-cybermenu>
-            </div>
-          </section>
-        </li>
-        <li class="nav__item">
-          <section class="degree">
-            {{otherSec}}
-            <div class="degree"></div>
-            <div class="hoover">
-              <app-menu [menuL]="menusL" [menuR]="menusR"></app-menu>
-            </div>
-          </section>
-        </li>
-        <li class="nav__item">{{mediaCentre}}<div></div>
+        <li class="nav__item" (click)="closeNav()">{{mediaCentre}}<div></div>
           <ul class="drop-menu">
-            <li routerLink="/{{medMen.attributes.url}}" *ngFor="let medMen of mediamenus">
+            <li routerLink="/{{medMen.attributes.url}}" (click)="closeNav()" *ngFor="let medMen of mediamenus">
               <a><mat-icon>{{medMen.attributes.icon}}</mat-icon>{{medMen.attributes.name}}</a>
             </li>
           </ul>
         </li>
+      </div>
+      <ul class="nav__items">
+
         <li class="nav_item">
           <div class="halospher-btn">
             <button>{{enterHalo}}</button>
@@ -69,48 +63,71 @@
       <li routerLink="/risk-advisory-and-consulting" (click)="onToggle()">Risk Advisory & Consulting</li>
       <li>
         <div class="" (click)="cyberToggle()">
-          <button class="drop-btn">Cyber Security Solutions<mat-icon>chevron_right</mat-icon></button>
+          <button class="drop-btn">Cyber Security<mat-icon>chevron_right</mat-icon></button>
           <ul class="menu-dropdown" *ngIf="isCyberToggle">
-            <li (click)="toCyber()"><mat-icon>laptop_windows</mat-icon>Virtual & Cyber Security Solutions</li>
-            <li (click)=" toEnd()"><mat-icon>settings</mat-icon>Endpoint Security</li>
-            <li (click)="toCloud()"><mat-icon>cloud</mat-icon>Cloud Security</li>
-            <li (click)=" toApp()"><mat-icon>verified_user</mat-icon>Application Security</li>
-            <li (click)=" toData()"><mat-icon>insights</mat-icon>Data Protection</li>
-            <li (click)="toEmail()"><mat-icon>mail</mat-icon>Email Security</li>
-            <li (click)="toIdentity()"><mat-icon>emergency_heat</mat-icon>Identity and Access Management</li>
-            <li (click)="toMobile()"><mat-icon>devices</mat-icon>Mobile Security</li>
-            <li (click)="toNetwork()"><mat-icon>lan</mat-icon>Network Security</li>
-            <li (click)="toWeb() "><mat-icon>public</mat-icon>Web Security</li>
-            <li routerLink="/cyber-security">See More</li>
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of cybermenusL">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon>{{menu.attributes.name}}
+            </li>
+            <li routerLink="/cyber-security">View All</li>
           </ul>
         </div>
       </li>
       <li>
         <div class="" (click)="solutionToggle()">
-          <button class="drop-btn">Other Security Solutions<mat-icon>chevron_right</mat-icon></button>
+          <button class="drop-btn">Security Tecnologies<mat-icon>chevron_right</mat-icon></button>
           <ul class="menu-dropdown" *ngIf="isSolutionToggle">
-            <li (click)="toElem()"> <mat-icon>laptop_windows</mat-icon> Electronic & Telematic Security</li>
-            <li (click)="toAccess()"><mat-icon>settings</mat-icon> Access Control Systems</li>
-            <li>Integrated Security Systems</li>
-            <li routerLink="/physical-security"> <mat-icon>verified_user</mat-icon>Physical Security</li>
-            <li (click)="toIden()"><mat-icon>fingerprint</mat-icon>Identity Management</li>
-            <li (click)="toIden()"><mat-icon>fingerprint</mat-icon>Talent Risking & Outsourcing Solutions</li>
-            <li (click)="toSuv()"> <mat-icon>camera_indoor</mat-icon> Surveillance & Remote Monitoring</li>
-            <li (click)="toAccess()">Travel Risk Consulting & Advisory Services</li>
-            <li (click)="toMobility()"> <mat-icon>emoji_transportation</mat-icon> Secure Mobility</li>
-            <li (click)="toEmerge()"> <mat-icon>emergency_heat</mat-icon> Emergency Response Solutions</li>
-            <li (click)="toMaritime()"> <mat-icon>shield_moon</mat-icon> Maritime Protection Service</li>
-            <li (click)="toFreight()"> <mat-icon>enhanced_encryption</mat-icon> Freight Secured</li>
-            <li (click)="toExtraction()"> <mat-icon>support</mat-icon> Emergency Rescue & Extraction</li>
-            <li (click)="toBus()"> <mat-icon>domain</mat-icon> Business Security Solution</li>
-            <li (click)="toCritical()"><mat-icon>web_asset</mat-icon> Critical Asset Security Solutions</li>
-            <li (click)="toHome()"> <mat-icon>real_estate_agent</mat-icon> Home Security Solution </li>
-            <li (click)="toIntelligence()"> <mat-icon>smart_toy</mat-icon> Intelligence & Surveillance</li>
-            <li (click)="toTravel()"> <mat-icon>flight_takeoff</mat-icon>Travel Consulting</li>
-            <li routerLink="/other-security-solutions">See more</li>
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of secTechMenu">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon> {{menu.attributes.name}}
+            </li>
+            <li routerLink="/security-technologies">View All</li>
           </ul>
         </div>
       </li>
+      <li>
+        <div class="" (click)="phyToggle()">
+          <button class="drop-btn">Physical Security & Mobility<mat-icon>chevron_right</mat-icon></button>
+          <ul class="menu-dropdown" *ngIf="isphyToggle">
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of phyMenu">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon> {{menu.attributes.name}}
+            </li>
+            <li routerLink="/security-technologies">View All</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="" (click)="outMenuToggle()">
+          <button class="drop-btn">Outsourcing, Investigations & Identity<mat-icon>chevron_right</mat-icon></button>
+          <ul class="menu-dropdown" *ngIf="isOutToggle">
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of outMenu">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon> {{menu.attributes.name}}
+            </li>
+            <li routerLink="/security-technologies">View All</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="" (click)="eduToggle()">
+          <button class="drop-btn">Security Education<mat-icon>chevron_right</mat-icon></button>
+          <ul class="menu-dropdown" *ngIf="isEduToggle  ">
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of secEduMenu">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon> {{menu.attributes.name}}
+            </li>
+            <li routerLink="/security-technologies">View All</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="" (click)="riskToggle()">
+          <button class="drop-btn">Security Risk Advisory & Consultancy<mat-icon>chevron_right</mat-icon></button>
+          <ul class="menu-dropdown" *ngIf="isRiskToggle  ">
+            <li (click)="redirect(menu.attributes.url)" *ngFor="let menu of riskMenu">
+              <mat-icon>{{menu.attributes.icon}}</mat-icon> {{menu.attributes.name}}
+            </li>
+            <li routerLink="/security-technologies">View All</li>
+          </ul>
+        </div>
+      </li>
+
       <li>
         <div class="" (click)=" mediaToggle()">
           <button class="drop-btn">Media Centre<mat-icon>chevron_right</mat-icon></button>
@@ -128,5 +145,9 @@
       <mat-icon>close</mat-icon>
     </div>
   </div>
+  <ng-container>
+    <app-halogen-nav [cybermenusL]="cybermenusL" [outMenu]="outMenu" [phyMenu]="phyMenu" [secTechMenu]="secTechMenu"
+      [secEduMenu]="secEduMenu" [riskMenu]="riskMenu" *ngIf="activeMenu" (btnClick)="closeNav()"></app-halogen-nav>
+  </ng-container>
 
 </nav>

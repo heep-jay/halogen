@@ -4,6 +4,7 @@
   width: 100%;
   gap: 1rem;
   padding: 1.5rem;
+  z-index: 40;
 }
 
 .form_input,
@@ -16,7 +17,7 @@
 
 .form_input input {
   padding: 0.8rem 1.5rem;
-  border-radius: 32px;
+  border-radius: 8px;
   outline: none;
   border: 1px solid rgba(189, 189, 189, 0.55);
 }
@@ -37,8 +38,9 @@
 }
 
 .form_textarea textarea {
-  border-radius: 16px;
+  border-radius: 10px;
   outline: none;
+  padding: 1rem;
   border: 1px solid rgba(189, 189, 189, 0.55);
 }
 

@@ -23,7 +23,7 @@ export class OtherSolutionsComponent implements OnInit {
   banners: any;
   products: any;
   pImage: any;
-
+  services: string[] = [];
   constructor(private modalService: NgbModal, private api: ApiService) { }
 
   open(content: any) {
@@ -50,6 +50,9 @@ export class OtherSolutionsComponent implements OnInit {
       // this.productBody4 = data.attributes.productBody4
       this.banners = data.attributes.product_banners.data
       this.products = data.attributes.products.data
+      this.products.map((data: any) => (
+        this.services.push(data.attributes.productName)
+      ))
 
       console.log(this.products)
     })

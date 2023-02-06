@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
 
 
@@ -9,11 +9,16 @@ import { ApiService } from 'src/app/Service/api.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @Output() openMegaMenu = new EventEmitter();
   isToggle: boolean = false
   isAboutToggle: boolean = false;
   isSolutionToggle: boolean = false;
   isCyberToggle: boolean = false;
   isMediaToggle: boolean = false;
+  isphyToggle: boolean = false;
+  isOutToggle: boolean = false;
+  isEduToggle: boolean = false;
+  isRiskToggle: boolean = false;
   aboutUs = ""
   cyberSec = ""
   mediaCentre = ""
@@ -24,9 +29,13 @@ export class NavbarComponent implements OnInit {
   aboutmenus: any;
   mediamenus: any;
   cybermenusL: any;
-  cybermenusR: any;
-  menusL: any;
-  menusR: any;
+  outMenu: any;
+  phyMenu: any;
+  secTechMenu: any;
+  secEduMenu: any;
+  riskMenu: any;
+
+  activeMenu: boolean = false;
   constructor(private api: ApiService) {
 
   }
@@ -42,37 +51,61 @@ export class NavbarComponent implements OnInit {
       this.aboutmenus = data.attributes.abouts.data
       this.mediamenus = data.attributes.media_centres.data
       this.cybermenusL = data.attributes.cyber_menu_lefts.data
-      this.cybermenusR = data.attributes.cyber_menu_rights.data
-      this.menusL = data.attributes.menu_lefts.data
-      this.menusR = data.attributes.menu_rights.data
+      this.outMenu = data.attributes.outsourcing_menus.data
+      this.phyMenu = data.attributes.physical_security_menus.data
+      this.secTechMenu = data.attributes.security_technologies_menus.data
+      this.secEduMenu = data.attributes.security_education_menus.data
+      this.riskMenu = data.attributes.security_risk_menus.data
+
       this.getMenuLinks()
     })
 
   }
-
-
-  getMenuLinks() {
-    this.cybermenusL.map((data: any) => {
-      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
-      return this.cybermenusL;
-    })
-    this.cybermenusR.map((data: any) => {
-      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
-      return this.cybermenusR;
-    })
-    this.menusL.map((data: any) => {
-      data.attributes.url = `https://halogenwebsite.vercel.app/other-security-solutions#${data.attributes.url}`
-      console.log(data.attributes.url)
-      return this.cybermenusL;
-    })
-    this.menusR.map((data: any) => {
-      data.attributes.url = `https://halogenwebsite.vercel.app/other-security-solutions#${data.attributes.url}`
-      console.log(data.attributes.url)
-      return this.cybermenusR;
-    })
+  @HostListener('document:click', ['$event']) onDocumentClick(event: any) {
+    this.activeMenu = false
   }
 
+  openMenu($event: any): void {
+    $event.stopPropagation()
+    this.activeMenu = !this.activeMenu
+  }
+  closeNav() {
+    this.activeMenu = false
+  }
+  getMenuLinks() {
+    this.cybermenusL.map((data: any) => {
+      console.log(data)
+      data.attributes.url = `http://localhost:4200/cyber-security#${data.attributes.url}`
+      return this.cybermenusL;
+    })
+    this.outMenu.map((data: any) => {
+      data.attributes.url = `http://localhost:4200/outsourcing-investigations-identity#${data.attributes.url}`
+      return this.outMenu;
+    })
+    this.phyMenu.map((data: any) => {
+      data.attributes.url = `http://localhost:4200/physical-security#${data.attributes.url}`
+      return this.phyMenu;
+    })
+    this.secTechMenu.map((data: any) => {
+      data.attributes.url = `http://localhost:4200/security-technologies#${data.attributes.url}`
+      return this.secTechMenu;
+    })
+    this.secEduMenu.map((data: any) => {
+      data.attributes.url = `http://localhost:4200/security-seducation#${data.attributes.url}`
+      return this.secEduMenu;
+    })
+    this.riskMenu.map((data: any) => {
+      data.attributes.url = `http://localhost:4200/risk-advisory-and-consulting#${data.attributes.url}`
+      return this.riskMenu;
+    })
 
+  }
+
+  redirect(data: any) {
+
+    window.location.href = data
+    this.onToggle();
+  }
   mediaToggle() {
     this.isMediaToggle = !this.isMediaToggle;
   }
@@ -88,112 +121,20 @@ export class NavbarComponent implements OnInit {
   cyberToggle() {
     this.isCyberToggle = !this.isCyberToggle
   }
-  toCyber() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#cyber";
-    this.isToggle = false;
-    // document.getElementById("suv")?.scrollIntoView({ behavior: "smooth" });
+  phyToggle() {
+    this.isphyToggle = !this.isphyToggle
   }
-  toEnd() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#endpoint";
-    this.isToggle = false;
+  eduToggle() {
+    this.isEduToggle = !this.isEduToggle
   }
-  toApp() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#app";
-    this.isToggle = false;
+  outMenuToggle() {
+    this.isOutToggle = !this.isOutToggle
   }
-  toCloud() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#cloud";
-    this.isToggle = false;
-  }
-  toEmail() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#email";
-    this.isToggle = false;
-  }
-  toData() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#data";
-    this.isToggle = false;
-  }
-  toIdentity() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#identity";
-    this.isToggle = false;
-  }
-  toMobile() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#mobile";
-    this.isToggle = false;
-  }
-  toNetwork() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#network";
-    this.isToggle = false;
-  }
-  toBusiness() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#business";
-    this.isToggle = false;
-  }
-  toWeb() {
-    window.location.href = "https://halogenwebsite.vercel.app/cyber-security#critical";
-    this.isToggle = false;
+  riskToggle() {
+    this.isRiskToggle = !this.isRiskToggle
   }
 
 
 
-
-  toSuv() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#suv";
-    this.isToggle = false;
-    // document.getElementById("suv")?.scrollIntoView({ behavior: "smooth" });
-  }
-  toElem() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#elem";
-    this.isToggle = false;
-  }
-  toAccess() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#access";
-    this.isToggle = false;
-  }
-  toIden() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#identity";
-    this.isToggle = false;
-  }
-  toBus() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#business";
-    this.isToggle = false;
-  }
-  toMobility() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#mobility";
-    this.isToggle = false;
-  }
-  toEmerge() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#emerge";
-    this.isToggle = false;
-  }
-  toMaritime() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#maritime";
-    this.isToggle = false;
-  }
-  toFreight() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#freight";
-    this.isToggle = false;
-  }
-  toExtraction() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#extraction";
-    this.isToggle = false;
-  }
-
-  toCritical() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#critical";
-    this.isToggle = false;
-  }
-  toHome() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#home";
-    this.isToggle = false;
-  }
-  toIntelligence() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#intelligence";
-    this.isToggle = false;
-  }
-  toTravel() {
-    window.location.href = "https://halogenwebsite.vercel.app/other-security-solutions#travel";
-    this.isToggle = false;
-  }
 
 }

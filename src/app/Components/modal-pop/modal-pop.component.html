@@ -7,16 +7,26 @@
     <label for="email">Email</label>
     <input type="email" [(ngModel)]="formEmail" name="formEmail" id="email">
   </div>
-  <div class="form_select">
+  <!-- <div class="form_select">
     <label for="service">Service</label>
     <div class="select-div">
       <select #service (change)="onSelectService(service.value)" [(ngModel)]="formSubject" name="service">
         <option>Select Service</option>
-        <option *ngFor="let item of products" value="{{item.attributes.productName}}">
+        <option *ngFor="let service of services" value="{{item.attributes.productName}}">
           {{item.attributes.productName}}</option>
       </select>
     </div>
+  </div> -->
+  <div class="form_select">
+    <label for="service">Service</label>
+    <mat-form-field appearance="outline">
+      <!-- <mat-label>Services</mat-label> -->
+      <mat-select multiple [(ngModel)]="formSubject" name="service" panelClass="my-select-panel-class">
+        <mat-option *ngFor="let service of services" [value]="service">{{service}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+
   <div class="form_input">
     <label for="">Subject</label>
     <input name="formSubject" value="{{formSubject}}" id="formSubject" type="text">
@@ -26,6 +36,13 @@
     <textarea name="formMessage" [(ngModel)]="formMessage" id="formMessage" rows="10" cols="50"></textarea>
   </div>
   <div class="send-btn">
-    <button type="submit">Book an appointment</button>
+    <button (click)="openDialog(content)" type="submit">Book an appointment</button>
   </div>
+  <ng-template #content>
+    <h1 mat-dialog-title>Hurray</h1>
+    <div mat-dialog-content>Email Succesfully Sent!!!</div>
+    <div mat-dialog-actions>
+      <button style="border: none; padding: 0.5rem 1.2rem;" mat-button mat-dialog-close>Close</button>
+    </div>
+  </ng-template>
 </form>

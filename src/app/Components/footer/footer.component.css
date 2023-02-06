@@ -7,8 +7,21 @@
 
 }
 
-.footer-logo img {
-  width: 150px;
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.log {
+  width: 180px;
+}
+
+
+.badg {
+  width: 90px;
 }
 
 .footer__row {

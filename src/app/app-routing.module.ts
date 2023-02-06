@@ -14,6 +14,11 @@ import { PostComponent } from './Pages/post/post.component';
 import { NewsComponent } from './Pages/news/news.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
 import { GalleryPageComponent } from './Components/gallery-page/gallery-page.component';
+import { HalogenNavComponent } from './Components/halogen-nav/halogen-nav.component';
+import { SecurityTechnologiesComponent } from './Pages/security-technologies/security-technologies.component';
+import { PhysicalSecurityComponent } from './Pages/physical-security/physical-security.component';
+import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
+import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
 
 
 
@@ -64,6 +69,25 @@ const routes: Routes = [
   {
     component: GalleryComponent,
     path: 'gallery'
+  },
+  {
+    component: HalogenNavComponent,
+    path: 'allnav'
+  },
+  {
+    component: SecurityTechnologiesComponent,
+    path: 'security-technologies'
+  },
+  {
+    component: PhysicalSecurityComponent,
+    path: 'physical-security'
+  },
+  {
+    component: SecurityEducationComponent,
+    path: 'security-seducation'
+  }, {
+    component: OutsourcingComponent,
+    path: 'outsourcing-investigations-identity'
   },
 ];
 

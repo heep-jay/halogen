@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-servicemodal',
@@ -16,7 +17,7 @@ export class ServicemodalComponent implements OnInit {
   formFname: string = ""
   formLname: string = ""
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -48,5 +49,8 @@ export class ServicemodalComponent implements OnInit {
     this.formEmail = ""
     this.formFname = ""
     this.formLname = ""
+  }
+  openDialog(content: any) {
+    this.dialog.open(content);
   }
 }

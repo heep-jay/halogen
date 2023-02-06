@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/Service/api.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
-  selector: 'app-cyber-security',
-  templateUrl: './cyber-security.component.html',
-  styleUrls: ['./cyber-security.component.css']
+  selector: 'app-security-education',
+  templateUrl: './security-education.component.html',
+  styleUrls: ['./security-education.component.css']
 })
-export class CyberSecurityComponent implements OnInit {
+export class SecurityEducationComponent implements OnInit {
+
   closeResult: string = "";
   risks: any;
   productName: string = "";
@@ -22,7 +24,6 @@ export class CyberSecurityComponent implements OnInit {
   pImage: any;
   services: string[] = [];
 
-
   constructor(private modalService: NgbModal, private api: ApiService) { }
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
@@ -35,7 +36,7 @@ export class CyberSecurityComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this.api.getProductPage(2).subscribe((data) => {
+    this.api.getProductPage(5).subscribe((data) => {
 
       console.log(data)
       this.risks = data;
@@ -48,14 +49,14 @@ export class CyberSecurityComponent implements OnInit {
       this.productBody4 = data.attributes?.productBody4
       this.banners = data.attributes.product_banners.data
       this.products = data.attributes.products.data
-      this.products.map((data: any) => {
+      this.products.map((data: any) => (
         this.services.push(data.attributes.productName)
-      })
+      ))
       // this.getProductImg()
-
+      console.log(this.banners)
     })
 
-    this.api.getProductImage(2).subscribe((data) => {
+    this.api.getProductImage(5).subscribe((data) => {
       this.mainImage = data.attributes.productMainImage.data.attributes.url
     })
 
@@ -64,6 +65,5 @@ export class CyberSecurityComponent implements OnInit {
     console.log(data)
     document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
   }
-
 
 }

@@ -25,8 +25,16 @@
 
     <div class="modal__submit">
 
-      <button type="submit" class="modal__btn-continue">Book Service</button>
+      <button (click)="openDialog(content)" type="submit" class="modal__btn-continue">Book Service</button>
     </div>
+
+    <ng-template #content>
+      <h1 mat-dialog-title>Hurray</h1>
+      <div mat-dialog-content>Email Succesfully Sent!!!</div>
+      <div mat-dialog-actions>
+        <button style="border: none; padding: 0.5rem 1.2rem;" mat-button mat-dialog-close>Close</button>
+      </div>
+    </ng-template>
   </form>
 
 </div>

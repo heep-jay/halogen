@@ -17,6 +17,7 @@ const httpOptions = {
 
 export class ApiService {
   private apiUrl = "https://halogen-app.onrender.com"
+  // private apiUrl = "http://localhost:1337"
   private bookUrl = "https://dev-halobiz-identity-dev-halobiz-mail.azurewebsites.net/Mail/WebsiteServiceAutoReply"
   constructor(private http: HttpClient) { }
 
@@ -38,7 +39,7 @@ export class ApiService {
 
   }
   getNavBar() {
-    return this.http.get(`${this.apiUrl}/api/navbars?fields=aboutUs,riskAdv,cyberSecurity,otherSec,mediaCentre,enterHalo&populate=*`).pipe(
+    return this.http.get(`${this.apiUrl}/api/navbars?populate=*`).pipe(
       map((res: any) => {
         return res.data[0];
       }))

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-about',
@@ -64,7 +66,7 @@ export class AboutComponent implements OnInit {
   //   name: "Oluwaseun Adesanya",
   //   title: "Group Head, Cooperate Strategy",
   // }]
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);

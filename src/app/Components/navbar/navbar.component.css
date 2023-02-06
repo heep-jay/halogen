@@ -2,6 +2,7 @@
   background: rgb(177, 149, 62);
   background: linear-gradient(149deg, rgba(177, 149, 62, 1) 0%, rgba(28, 43, 102, 1) 55%);
   position: relative;
+
 }
 
 .nav {
@@ -12,49 +13,88 @@
   width: 90%;
   margin: 0 auto;
   /* padding: 0.75rem; */
-  height: 70px;
+  height: 50px;
 }
 
 
 .nav__logo {
   flex: 0.1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700
+}
+
+.empty-nav {
+  flex: 0.2;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.empty-nav li {
+  width: 100%;
+  white-space: nowrap;
 }
 
 .nav__menu {
   flex: 0.8;
+
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .nav__logo-img {
-  width: 60px;
+  width: 40px;
   cursor: pointer;
 }
 
-/* .nav__items {
-  display: flex;
+.nav__items {
+  flex: 0.2;
+  width: 100%;
+  /* display: flex; */
   list-style: none;
   gap: 3rem;
   margin: 0;
-} */
-.nav-menu {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  cursor: pointer;
-  gap: 4rem;
-  flex: 0.5;
-  color: #fff;
 }
+
+
 
 .nav__items {
   display: none;
 }
 
 .nav__item {
-  font-size: clamp(0.8125rem, 0.4219rem + 1.25vw, .925rem);
+  font-size: 15px;
+  width: 100%;
   font-weight: 400;
   cursor: pointer;
   color: #fff;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
   position: relative;
+}
+
+.toggleNav {
+
+  background: #fff;
+  border: 1px solid #1c2b66;
+  border-bottom: none;
+  color: #FCBE00;
+  padding: 0 0.5rem;
+  height: 58px;
 }
 
 .nav__item div {
@@ -99,6 +139,7 @@
 
 .halospher-btn button {
   display: none;
+  float: right;
 
 }
 
@@ -121,13 +162,13 @@
 .nav__item>.drop-menu {
   background-color: #ffff;
   list-style: none;
-  width: 250px;
+  width: 230px;
   padding: 10px;
   border: 1px solid #EFF0F7;
   box-shadow: 0px 10px 14px rgba(74, 58, 255, 0.01), 0px 8px 16px rgba(23, 15, 73, 0.03);
   border-radius: 22px;
   top: 85px;
-  left: -60px;
+  left: -80px;
   color: #6F6C90;
   line-height: 45px;
   position: absolute;
@@ -136,7 +177,7 @@
 }
 
 .nav__item:hover>.drop-menu {
-  top: 30px;
+  top: 55px;
   visibility: visible;
   opacity: 1;
   transition: all 0.4s ease;
@@ -237,7 +278,7 @@
   color: #fff;
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1300px) {
   .nav-menu {
     display: none;
   }
@@ -249,15 +290,22 @@
   .nav__items {
     display: flex;
     align-items: center;
-    gap: 3rem;
     flex: 0.5;
     list-style: none;
     margin: 0;
   }
 
+  .nav__item {
+    display: flex;
+  }
+
+  .halospher-btn {
+    float: right;
+  }
+
   .halospher-btn button {
     display: flex;
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 2rem;
     background: #fff;
     color: #1c2b66;
     border-radius: 18px;

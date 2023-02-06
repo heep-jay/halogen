@@ -1,8 +1,8 @@
 .news {
   display: flex;
   flex-direction: column;
-  /* max-width: 1300px; */
-  margin: 8rem auto 0 auto;
+
+  margin: 4rem auto 0 auto;
   gap: 4rem;
 }
 
@@ -12,6 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 4rem;
+  max-width: 1300px;
   justify-content: space-between;
 }
 
@@ -67,6 +68,13 @@
   gap: 1rem;
 }
 
+.mainPost_related h3 {
+  font-size: clamp(0.875rem, 0.7857rem + 0.2857vw, 1.125rem);
+  font-weight: 600;
+  color: #1C2B66;
+  margin: 0;
+}
+
 .news__header {
   text-align: center;
 }
@@ -85,9 +93,10 @@
 .news__posts {
   width: 90%;
   margin: auto;
+  max-width: 1300px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 30px;
   padding: 20px;
   margin: 0 auto;
   row-gap: 1rem;
@@ -95,7 +104,7 @@
 
 .news__show {
   text-align: center;
-
+  margin: 2rem 0;
 }
 
 .news__posts-btn {
@@ -116,7 +125,8 @@
 }
 
 .news__divider {
-  width: 80%;
+  width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -130,12 +140,14 @@
 
 .news__must-read {
   width: 100%;
+  /* max-width: 1300px; */
 }
 
 .news__must-readPost {
   background: rgba(28, 43, 102, 0.05);
   min-height: 609px;
   position: relative;
+
   padding: 1rem;
 }
 
@@ -145,6 +157,7 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 80%;
+  max-width: 1300px;
   margin: 0 auto;
   margin-top: 2rem;
 }

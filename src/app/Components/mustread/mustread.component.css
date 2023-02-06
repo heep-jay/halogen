@@ -9,10 +9,12 @@
 }
 
 .mustread__post {
-
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   height: fit-content;
   max-height: fit-content;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .mustread__illust {
@@ -35,6 +37,7 @@
 .mustread__title {
 
   font-size: clamp(1.125rem, -0.4375rem + 5vw, 2.375rem);
+  line-height: 43px;
   font-weight: 600;
   color: #1C2B66;
 }
@@ -44,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 4rem 2rem;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 

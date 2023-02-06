@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-pop',
@@ -7,14 +8,14 @@ import { ApiService } from 'src/app/Service/api.service';
   styleUrls: ['./modal-pop.component.css']
 })
 export class ModalPopComponent implements OnInit {
-  @Input() products: any;
+  @Input() services: any;
   formName: string = "";
   formEmail: any = ""
   formSubject: string = "";
   formMessage: string = "";
   formData: any;
   selectedService = ""
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -47,5 +48,8 @@ export class ModalPopComponent implements OnInit {
   onSelectService(service: any) {
     this.selectedService = service
     this.formSubject = this.selectedService
+  }
+  openDialog(content: any) {
+    this.dialog.open(content);
   }
 }
