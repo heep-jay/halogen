@@ -15,7 +15,7 @@
               <mat-icon>{{fl.attributes.solutionIcon}}</mat-icon>
             </div>
             <div class="solution-text">
-              <h5>{{fl.attributes.solutionName}}</h5>
+              <h5 routerLink="/cyber-security">{{fl.attributes.solutionName}}</h5>
               <p>{{fl.attributes.solutionDescription}}</p>
             </div>
           </div>
@@ -23,11 +23,12 @@
         </div>
         <div class="business__solutions-right">
           <div class="solution-cols" *ngFor="let fr of fybRight">
-            <div [className]="fr.attributes.active ? 'solution-icon icon-secondary' : 'solution-icon icon-primary'">
+            <div routerLink="/cyber-security"
+              [className]="fr.attributes.active ? 'solution-icon icon-secondary' : 'solution-icon icon-primary'">
               <mat-icon>{{fr.attributes.solutionIcon}}</mat-icon>
             </div>
             <div class="solution-text">
-              <h5>{{fr.attributes.solutionName}}</h5>
+              <h5 routerLink="/cyber-security">{{fr.attributes.solutionName}}</h5>
               <p>{{fr.attributes.solutionDescription}}
               </p>
             </div>
