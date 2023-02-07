@@ -14,6 +14,7 @@
 .vpost img {
   width: 30%;
   height: 90px;
+  min-width: 148px;
   max-width: 148px;
   object-fit: cover;
   cursor: pointer;
