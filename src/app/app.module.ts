@@ -50,11 +50,11 @@ import { GalleryPageComponent } from './Components/gallery-page/gallery-page.com
 import { GalleryBoxComponent } from './Components/gallery-box/gallery-box.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
 import { HalogenNavComponent } from './Components/halogen-nav/halogen-nav.component';
-import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { SecurityTechnologiesComponent } from './Pages/security-technologies/security-technologies.component';
 import { PhysicalSecurityComponent } from './Pages/physical-security/physical-security.component';
 import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
 import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
+import { PostdetailsComponent } from './Components/postdetails/postdetails.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +96,7 @@ import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component'
     PhysicalSecurityComponent,
     SecurityEducationComponent,
     OutsourcingComponent,
+    PostdetailsComponent,
 
   ],
   imports: [
@@ -111,7 +112,6 @@ import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component'
     NgbModule,
     MatSelectModule,
     MatDialogModule,
-    NgMultiSelectDropDownModule.forRoot(),
 
   ],
   providers: [],

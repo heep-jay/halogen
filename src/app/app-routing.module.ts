@@ -19,6 +19,7 @@ import { SecurityTechnologiesComponent } from './Pages/security-technologies/sec
 import { PhysicalSecurityComponent } from './Pages/physical-security/physical-security.component';
 import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
 import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
+import { PostdetailsComponent } from './Components/postdetails/postdetails.component';
 
 
 
@@ -89,7 +90,11 @@ const routes: Routes = [
     component: OutsourcingComponent,
     path: 'outsourcing-investigations-identity'
   },
-];
+  {
+    component: PostdetailsComponent,
+    path: 'news-events/news/:id'
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
