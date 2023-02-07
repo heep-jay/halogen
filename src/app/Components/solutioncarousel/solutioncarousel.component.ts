@@ -5,6 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './solutioncarousel.component.html',
   styleUrls: ['./solutioncarousel.component.css']
 })
+
 export class SolutioncarouselComponent implements OnInit {
   @Input() solution: any;
   constructor() { }

@@ -46,7 +46,7 @@
         </div>
       </div>
     </div> -->
-    <div class="carousel-item active">
+    <!-- <div class="carousel-item active">
       <div class="caro">
         <div class="mainpost_left">
           <div class="mainpost_content">
@@ -68,22 +68,17 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="carousel-item">
+    </div> -->
+    <div [className]=" news.id === 1 ? 'carousel-item active' : 'carousel-item'" *ngFor="let news of headlinePost">
       <div class="caro">
         <div class="mainpost_left">
           <div class="mainpost_content">
-            <img src="/assets/images/hero.jpg" alt="">
+            <img src="{{news.attributes.mainImage.data.attributes.url}}" alt="">
             <div class="mainpost_title">
               <span>By Odam Lafer</span>
-              <h2>Technology- driven business
-                process is the new normal</h2>
+              <h2>{{news.attributes.title}}</h2>
             </div>
-            <p>We lead the West African security solutions market, as we continually focus on delivering valued
-              solution sacross the industry’s value chain as the number one integrated.
-              across the industry’s value chain as the number one integrated.sacross the industry’s value chain as the
-              number one integrated.
-              across the industry’s value chain as the number one integrated.</p>
+            <p>{{news.attributes.summary}}</p>
 
             <div class="mainpost_content-btn">
               <button>Read More <mat-icon>chevron_right</mat-icon></button>
@@ -94,7 +89,7 @@
       </div>
     </div>
 
-    <div class="carousel-item">
+    <!-- <div class="carousel-item">
       <div class="caro">
         <div class="mainpost_left">
           <div class="mainpost_content">
@@ -116,7 +111,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

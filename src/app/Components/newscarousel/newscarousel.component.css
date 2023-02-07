@@ -68,7 +68,10 @@
 
 .mainpost_content img {
   width: 100%;
-
+  max-width: 585px;
+  height: auto;
+  max-height: 380px;
+  object-fit: cover;
 }
 
 .mainpost_title h2 {

@@ -1,8 +1,8 @@
 <div class="vpost">
-  <img src="{{post.image}}" alt="" routerLink="/post" class="minipost__img">
+  <img src="{{post.attributes.mainImage.data.attributes.url}}" alt="" routerLink="/post" class="minipost__img">
   <div class="vpost_content">
-    <h4 class="vpost__title">{{post.title}}</h4>
+    <h4 class="vpost__title">{{post.attributes.title}}</h4>
 
-    <button class="vpost_btn" routerLink="/post">Read {{post.type}}<mat-icon>chevron_right</mat-icon></button>
+    <button class="vpost_btn" routerLink="/post">Read News<mat-icon>chevron_right</mat-icon></button>
   </div>
 </div>

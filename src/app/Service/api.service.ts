@@ -112,4 +112,11 @@ export class ApiService {
           return res.data[0];
         }))
   }
+  getNewsandEvents() {
+    return this.http.get(`${this.apiUrl}/api/news-and-events?populate[0]=news_posts.mainImage`)
+      .pipe(
+        map((res: any) => {
+          return res.data[0];
+        }))
+  }
 }
