@@ -92,20 +92,25 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: #666481;
+    cursor: pointer;
   }
 
   .menu__column ul li a,
   .menu__column ul li a {
-    color: #6F6C90;
     text-decoration: none;
+    color: #666481;
   }
 
-  .menu__column ul li a:hover,
+  .menu__column ul li:hover {
+    color: #1c2b66;
+  }
+
   .menu__column ul li a:hover {
     color: #1c2b66;
     font-weight: 600;
     text-decoration: underline;
-    cursor: pointer;
+
   }
 
   .menu__features {
@@ -118,12 +123,13 @@
   }
 
   .menu__features h3 {
-    font-size: clamp(1rem, 0.9554rem + 0.1429vw, 1.125rem);
+    font-size: clamp(0.85rem, 0.9554rem + 0.1429vw, .95rem);
     color: #1c2b66;
     font-weight: 600;
   }
 
   .features {
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -159,7 +165,7 @@
   }
 
   .f_description h3 {
-    font-size: clamp(1rem, 0.9554rem + 0.1429vw, .85rem);
+    font-size: clamp(0.85rem, 0.9554rem + 0.1429vw, 1.085rem);
     color: #1c2b66;
     font-weight: 600;
   }

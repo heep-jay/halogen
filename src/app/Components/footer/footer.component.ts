@@ -18,4 +18,8 @@ export class FooterComponent implements OnInit {
     // window.location.href = "https://www.instagram.com/halogen_group/"
     window.open('https://www.instagram.com/halogen_group', '_blank');
   }
+  toElem() {
+    window.open('https://www.instagram.com/halogen_group', '_blank');
+    window.location.href = 'https://halogenwebsite.vercel.app/#elem'
+  }
 }

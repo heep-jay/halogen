@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { IvyCarouselModule } from 'carousel-angular';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MarkdownModule } from 'ngx-markdown';
 
 import { HomecarouselComponent } from './Components/homecarousel/homecarousel.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -55,6 +55,8 @@ import { PhysicalSecurityComponent } from './Pages/physical-security/physical-se
 import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
 import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
 import { PostdetailsComponent } from './Components/postdetails/postdetails.component';
+import { VideoboxComponent } from './Components/videobox/videobox.component';
+import { VideopageComponent } from './Pages/videopage/videopage.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,8 @@ import { PostdetailsComponent } from './Components/postdetails/postdetails.compo
     SecurityEducationComponent,
     OutsourcingComponent,
     PostdetailsComponent,
+    VideoboxComponent,
+    VideopageComponent,
 
   ],
   imports: [
@@ -112,6 +116,7 @@ import { PostdetailsComponent } from './Components/postdetails/postdetails.compo
     NgbModule,
     MatSelectModule,
     MatDialogModule,
+    MarkdownModule.forRoot(),
 
   ],
   providers: [],

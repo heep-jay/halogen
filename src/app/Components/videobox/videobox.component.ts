@@ -1,14 +1,10 @@
-import { animate, style, transition, trigger, AnimationEvent } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
+import { animate, style, transition, trigger, AnimationEvent } from '@angular/animations';
 
-interface Item {
-  imageSrc: string;
-  imageAlt: string;
-}
 @Component({
-  selector: 'app-gallery-box',
-  templateUrl: './gallery-box.component.html',
-  styleUrls: ['./gallery-box.component.css'],
+  selector: 'app-videobox',
+  templateUrl: './videobox.component.html',
+  styleUrls: ['./videobox.component.css'],
   animations: [
     trigger('animation', [
       transition('void => visible', [
@@ -28,7 +24,7 @@ interface Item {
     ])
   ]
 })
-export class GalleryBoxComponent implements OnInit {
+export class VideoboxComponent implements OnInit {
   @Input() galleryData: any;
   @Input() showCount!: boolean;
 
@@ -39,7 +35,6 @@ export class GalleryBoxComponent implements OnInit {
   controls: boolean = true
   currentLightboxImage: any;
   constructor() { }
-
   ngOnInit(): void {
 
     this.currentLightboxImage = this.galleryData[0];

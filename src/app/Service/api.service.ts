@@ -120,9 +120,38 @@ export class ApiService {
         }))
   }
   getOneNewsPost(id: any) {
-    return this.http.get(`${this.apiUrl}/api/news-posts/1/?populate=*`).pipe(
+    return this.http.get(`${this.apiUrl}/api/news-posts/${id}/?populate=*`).pipe(
       map((res: any) => {
         return res.data;
       }))
+  }
+
+  getGalleryPhotos() {
+    return this.http.get(`${this.apiUrl}/api/photo-galleries/?populate=*`)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        }))
+  }
+  getOneGalleryPhotos(id: any) {
+    return this.http.get(`${this.apiUrl}/api/photo-galleries/${id}/?populate=*`)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        }))
+  }
+  getGalleryVideos() {
+    return this.http.get(`${this.apiUrl}/api/video-galleries/?populate=*`)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        }))
+  }
+  getOneGalleryVideos(id: any) {
+    return this.http.get(`${this.apiUrl}/api/video-galleries/${id}/?populate=*`)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        }))
   }
 }

@@ -18,18 +18,16 @@ button {
   margin: 0;
 }
 
-body {
-  box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-}
 
 html,
 body {
+  box-sizing: border-box;
   height: 100%;
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-body {
-  margin: 0;
+* {
   font-family: 'Nunito Sans', sans-serif;
 }
 

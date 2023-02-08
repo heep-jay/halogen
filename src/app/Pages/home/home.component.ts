@@ -38,11 +38,10 @@ export class HomeComponent implements OnInit {
       // this.getBanners()
     })
   }
-  // getBanners() {
-  //   this.banner.map((data: any) => {
-  //     data.attributes.bannerImage.data.attributes.url = data.attributes.bannerImage.data.attributes.url
-  //     // console.log(data.attributes.bannerImage.data.attributes.url)
-  //     return this.banner
-  //   })
-  // }
+  halo() {
+    window.open('https://dev-halosphere.halobizapps.com/', '_blank');
+  }
+  redirect(url: string) {
+    window.location.href = `https://halogenwebsite.vercel.app/${url}`
+  }
 }

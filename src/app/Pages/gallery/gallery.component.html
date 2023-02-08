@@ -6,7 +6,7 @@
   <div class="gallery-tab">
     <div class="gallery-photos">
       <div>""</div>
-      <div class="g-photos" (click)="showGallery(year.value)">
+      <div class="g-photos" (click)="showGallery()">
         <h4>Gallery</h4>
         <div class="marker" *ngIf="isGallery"></div>
       </div>
@@ -23,6 +23,9 @@
           <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2019">2018</option>
         </select>
       </div>
     </div>
@@ -32,13 +35,14 @@
     <div></div>
   </div>
   <div class="gallery-grid">
-    <div class="grid-item" routerLink="/gallery/event" *ngFor="let images of galleryImages">
-      <img src="/assets/images/{{images.name}}.jpg" alt="" class="grid-image">
+    <div class="grid-item" routerLink="/gallery/{{link}}/{{images.id}}" *ngFor="let images of galleryImages">
+      <img [src]="images.attributes.mainImage.data.attributes.url" alt="" class="grid-image">
       <div class="grid-caption">
         <p>Nigeria needs a national emergency response policy.</p>
         <button>View More <mat-icon>arrow_right_alt</mat-icon></button>
       </div>
     </div>
+
   </div>
 
   <div class="grid-showmore-btn">

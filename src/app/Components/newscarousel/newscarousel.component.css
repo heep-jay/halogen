@@ -72,6 +72,7 @@
   height: auto;
   max-height: 380px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .mainpost_title h2 {
@@ -80,6 +81,7 @@
   line-height: 50px;
   margin: 0;
   color: #1C2B66;
+  cursor: pointer;
 }
 
 .mainpost_content p {

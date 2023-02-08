@@ -1,7 +1,9 @@
 <div class="gallery-lightbox-container">
   <div class="gallery">
     <div *ngFor="let data of galleryData; let i=index;" class="gallery-img">
-      <img (click)="onPreviewImage(i)" src="{{data.attributes.url}}" alt="{{data.attributes.name}}" />
+      <video (click)="onPreviewImage(i)" src="{{data.attributes.url}}">
+
+      </video>
     </div>
   </div>
   <div *ngIf="showMask" class="lightbox" @animation2>
@@ -15,7 +17,7 @@
       <mat-icon class="icon-lightbox-carousel icon-next">arrow_circle_right</mat-icon></button>
     <div *ngIf="previewImage" class="lightbox-img" [@animation]="{value: 'visible'}"
       (@animation.done)="onAnimationEnd($event)">
-      <img [src]="currentLightboxImage.attributes.url" [alt]="currentLightboxImage.attributes.name">
+      <video [src]="currentLightboxImage.attributes.url" controls></video>
     </div>
   </div>
 

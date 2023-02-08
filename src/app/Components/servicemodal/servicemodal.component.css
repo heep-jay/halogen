@@ -33,6 +33,13 @@
   height: 200px;
 }
 
+.dg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .input {
   font-weight: 700;
   font-size: 13px;

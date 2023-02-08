@@ -1,5 +1,6 @@
 <div class="post">
   <div class="post__header">
+    <span class="back-button" (click)="back()"><mat-icon>arrow_back</mat-icon> Go Back</span>
     <span>TECHNOLOGY</span>
     <h1 class="post__title">
       {{title}}
@@ -14,51 +15,15 @@
   </div>
   <div class="post__details">
     <img class="post__mainImage" [src]="mainImage" alt="">
-    <p class="post__details-text">Lörem ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-      Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga,
-      monoserasLörem.
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-      Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-    </p>
-    <p class="post__details-text">
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-      Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-      Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-    </p>
-  </div>
-  <h3 class="post__subtitle">How technology affecting the dental surgery?</h3>
-  <p class="post__details-text">
-    ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-    Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-    ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-    Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-  </p>
-  <div class="post__subImage">
-    <img src="/assets/images/lab.png" alt="">
-    <img src="/assets/images/inj.png" alt="">
-  </div>
-  <div class="post__banner">
-    <p class="post__details-text">
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-      Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
 
-      ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras.
+    <div id="mark-content">{{content}}</div>
 
-    </p>
-  </div>
-  <p class="post__details-text">
-    ipsum egogåde gyssa. Fare egoligen. Lakask velädera tuktiga, monoseras. Lörem ipsum egogåde gyssa. Fare egoligen.
-    Lakask velädera tuktiga, monoserasLörem ipsum egogåde gyssa. Fare egoligen.
-  </p>
+    <div class="post__divider">
+      <div></div>
+      <div></div>
+    </div>
 
-  <div class="post__divider">
-    <div></div>
-    <div></div>
+    <div class="post__related">
+      <app-relatedpost [rel]="related"></app-relatedpost>
+    </div>
   </div>
-
-  <div class="post__related">
-    <app-relatedpost [rel]="related"></app-relatedpost>
-  </div>
-</div>

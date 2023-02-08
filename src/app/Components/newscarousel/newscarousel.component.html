@@ -73,10 +73,11 @@
       <div class="caro">
         <div class="mainpost_left">
           <div class="mainpost_content">
-            <img src="{{news.attributes.mainImage.data.attributes.url}}" alt="">
+            <img routerLink="/news-events/news/{{news.id}}" src="{{news.attributes.mainImage.data.attributes.url}}"
+              alt="">
             <div class="mainpost_title">
               <span>By Odam Lafer</span>
-              <h2>{{news.attributes.title}}</h2>
+              <h2 routerLink="/news-events/news/{{news.id}}">{{news.attributes.title}}</h2>
             </div>
             <p>{{news.attributes.summary}}</p>
 

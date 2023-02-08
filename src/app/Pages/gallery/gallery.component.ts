@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/Service/api.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,154 +8,112 @@ import { Component, OnInit } from '@angular/core';
 })
 
 
+
 export class GalleryComponent implements OnInit {
   galleryImages: any;
   selectedTeam = '';
   isGallery: boolean = true;
   isVideos: boolean = false;
-  gallery = [{
-    name: "gallery",
-    year: "2023",
-    type: "photo",
-  }, {
-    name: "gallery2",
-    year: "2023",
-    type: "photo",
-  }, {
-    name: "gallery3",
-    year: "2023",
-    type: "photo",
-  }, {
-    name: "gallery4",
-    year: "2022",
-    type: "photo",
-  }, {
-    name: "gallery5",
-    year: "2022",
-    type: "photo",
-  }, {
-    name: "gallery6",
-    year: "2022",
-    type: "photo",
-  }, {
-    name: "gallery7",
-    year: "2021",
-    type: "photo",
-  }, {
-    name: "gallery8",
-    year: "2021",
-    type: "photo",
-  }, {
-    name: "gallery10",
-    year: "2021",
-    type: "photo",
-  },
-  {
-    name: "gallery10",
-    year: "2023",
-    type: "video",
-  }, {
-    name: "gallery5",
-    year: "2023",
-    type: "video",
-  }, {
-    name: "gallery2",
-    year: "2023",
-    type: "video",
-  }, {
-    name: "gallery4",
-    year: "2022",
-    type: "video",
-  }, {
-    name: "gallery7",
-    year: "2022",
-    type: "video",
-  }, {
-    name: "gallery6",
-    year: "2022",
-    type: "video",
-  }, {
-    name: "gallery",
-    year: "2021",
-    type: "video",
-  }, {
-    name: "gallery8",
-    year: "2021",
-    type: "video",
-  }, {
-    name: "gallery3",
-    year: "2021",
-    type: "video",
-  },
-
-  ]
+  gallery: any;
+  videos: any;
+  galleryVideos: any
+  link: any;
 
 
-  showGallery(year: string) {
-    this.isGallery = true;
-    this.isVideos = false
-    if (this.isGallery) {
-      this.galleryImages = this.gallery.filter(gal => gal.type === "photo")
-    } else null
-  }
-  showVideos(year: string) {
-    this.isGallery = false;
-    this.isVideos = true;
-    if (this.isVideos) {
-      this.galleryImages = this.gallery.filter(gal => gal.type === "video")
-    } else null
 
+  constructor(private api: ApiService) { }
+
+  ngOnInit(): void {
+
+    this.api.getGalleryPhotos().subscribe((data: any) => {
+      if (this.isGallery) {
+        console.log(this.isGallery)
+        this.gallery = data
+        this.isGallery = true
+        this.galleryImages = this.gallery
+        console.log(this.galleryImages)
+      }
+      return this.galleryImages
+    })
+    window.scrollTo(0, 0);
+    this.showGallery()
+
+    // this.isGallery = true;
+    // this.isVideos = false;
   }
   onSelected(value: string): void {
     this.selectedTeam = value;
 
     if (this.selectedTeam === "2023") {
       if (this.isGallery) {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2023" && gal.type === "photo")
+        this.galleryImages = this.gallery.filter((gal: any) => gal.attributes.year === "2023")
         console.log(this.galleryImages)
       } else {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2023" && gal.type === "video")
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2023")
       }
 
     }
     else if (this.selectedTeam === "2022") {
       if (this.isGallery) {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2022" && gal.type === "photo")
+        this.galleryImages = this.gallery.filter((gal: any) => gal.attributes.year === "2022")
         console.log(this.galleryImages)
       } else {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2022" && gal.type === "video")
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2022")
       }
     }
     else if (this.selectedTeam === "2021") {
       if (this.isGallery) {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2021" && gal.type === "photo")
+        this.galleryImages = this.gallery.filter((gal: any) => gal.attributes.year === "2021")
         console.log(this.galleryImages)
       } else {
-        this.galleryImages = this.gallery.filter(gal => gal.year === "2021" && gal.type === "video")
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2021")
+      }
+    }
+    else if (this.selectedTeam === "2020") {
+      if (this.isGallery) {
+        this.galleryImages = this.gallery.filter((gal: any) => gal.attributes.year === "2020")
+        console.log(this.galleryImages)
+      } else {
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2020")
+      }
+    }
+    else if (this.selectedTeam === "2019") {
+      if (this.isGallery) {
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2019")
+        console.log(this.galleryImages)
+      } else {
+        this.galleryImages = this.videos.filter((gal: any) => gal.attributes.year === "2019")
       }
     }
     else {
       if (this.isGallery) {
-        this.galleryImages = this.gallery.filter(gal => gal.type === "photo")
+        this.galleryImages = this.gallery
         console.log(this.galleryImages)
       } else {
-        this.galleryImages = this.gallery.filter(gal => gal.type === "video")
+        this.galleryImages = this.videos
       }
     }
 
   }
-  constructor() { }
-
-  ngOnInit(): void {
-    window.scrollTo(0, 0);
+  showGallery() {
+    this.isGallery = true;
+    this.isVideos = false
+    this.link = 'photos';
     if (this.isGallery) {
-      this.galleryImages = this.gallery.filter(gal => gal.type === "photo")
-    } else {
-      this.galleryImages = this.gallery.filter(gal => gal.type === "video")
+      this.galleryImages = this.gallery
+    } else null
+  }
+  showVideos(year: string) {
+    this.isGallery = false;
+    this.isVideos = true;
+    this.link = 'videos';
+    if (this.isVideos) {
+      console.log(this.isVideos)
+      this.api.getGalleryVideos().subscribe((data: any) => {
+        this.videos = data
+        this.galleryImages = this.videos
+      })
     }
-
-    // this.isGallery = true;
-    // this.isVideos = false;
   }
 
 }

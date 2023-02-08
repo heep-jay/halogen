@@ -30,6 +30,13 @@
   border: 1px solid rgba(189, 189, 189, 0.55);
 }
 
+.dg-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .select-div select {
   outline: none;
   border: none;

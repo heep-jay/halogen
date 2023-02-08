@@ -20,6 +20,7 @@ import { PhysicalSecurityComponent } from './Pages/physical-security/physical-se
 import { SecurityEducationComponent } from './Pages/security-education/security-education.component';
 import { OutsourcingComponent } from './Pages/outsourcing/outsourcing.component';
 import { PostdetailsComponent } from './Components/postdetails/postdetails.component';
+import { VideopageComponent } from './Pages/videopage/videopage.component';
 
 
 
@@ -65,7 +66,7 @@ const routes: Routes = [
   },
   {
     component: GalleryPageComponent,
-    path: 'gallery/event'
+    path: 'gallery/photos/:id'
   },
   {
     component: GalleryComponent,
@@ -93,6 +94,10 @@ const routes: Routes = [
   {
     component: PostdetailsComponent,
     path: 'news-events/news/:id'
+  },
+  {
+    component: VideopageComponent,
+    path: 'gallery/videos/:id'
   },
 ]
 

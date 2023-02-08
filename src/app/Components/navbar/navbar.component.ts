@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.api.getNavBar().subscribe(data => {
+    this.api.getNavBar().subscribe((data: any) => {
       this.aboutUs = data.attributes.aboutUs
       this.riskAdv = data.attributes.riskAdv
       this.cyberSec = data.attributes.cyberSecurity
@@ -74,28 +74,28 @@ export class NavbarComponent implements OnInit {
   }
   getMenuLinks() {
     this.cybermenusL.map((data: any) => {
-      console.log(data)
-      data.attributes.url = `http://localhost:4200/cyber-security#${data.attributes.url}`
+
+      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
       return this.cybermenusL;
     })
     this.outMenu.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/outsourcing-investigations-identity#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/outsourcing-investigations-identity#${data.attributes.url}`
       return this.outMenu;
     })
     this.phyMenu.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/physical-security#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/physical-security#${data.attributes.url}`
       return this.phyMenu;
     })
     this.secTechMenu.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/security-technologies#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/security-technologies#${data.attributes.url}`
       return this.secTechMenu;
     })
     this.secEduMenu.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/security-seducation#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/security-seducation#${data.attributes.url}`
       return this.secEduMenu;
     })
     this.riskMenu.map((data: any) => {
-      data.attributes.url = `http://localhost:4200/risk-advisory-and-consulting#${data.attributes.url}`
+      data.attributes.url = `https://halogenwebsite.vercel.app/risk-advisory-and-consulting#${data.attributes.url}`
       return this.riskMenu;
     })
 
@@ -134,7 +134,9 @@ export class NavbarComponent implements OnInit {
     this.isRiskToggle = !this.isRiskToggle
   }
 
-
+  halo() {
+    window.open('https://dev-halosphere.halobizapps.com/', '_blank');
+  }
 
 
 }
