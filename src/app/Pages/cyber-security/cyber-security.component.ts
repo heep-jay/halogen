@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/Service/api.service';
 export class CyberSecurityComponent implements OnInit {
   closeResult: string = "";
   risks: any;
+  prodP: any;
   productName: string = "";
   productHeader: string = "";
   mainImage: any;
@@ -33,26 +34,25 @@ export class CyberSecurityComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     window.scrollTo(0, 0);
-    this.api.getProductPage(2).subscribe((data) => {
+    await this.api.getProductPage(2).subscribe((data) => {
 
-      console.log(data)
+      console.log(data);
       this.risks = data;
-      this.productName = data.attributes.productName
-      this.productHeader = data.attributes.productHeader
-      this.productHeader = data.attributes.productHeader
-      this.productBody1 = data.attributes?.productBody1
-      this.productBody2 = data.attributes?.productBody2
-      this.productBody3 = data.attributes?.productBody3
-      this.productBody4 = data.attributes?.productBody4
-      this.banners = data.attributes.product_banners.data
-      this.products = data.attributes.products.data
+      this.productName = data.attributes.productName;
+      this.productHeader = data.attributes.productHeader;
+      this.productHeader = data.attributes.productHeader;
+      this.productBody1 = data.attributes?.productBody1;
+      this.productBody2 = data.attributes?.productBody2;
+      this.productBody3 = data.attributes?.productBody3;
+      this.productBody4 = data.attributes?.productBody4;
+      this.banners = data.attributes.product_banners.data;
+      this.products = data.attributes.products.data;
       this.products.map((data: any) => {
-        this.services.push(data.attributes.productName)
-      })
+        this.services.push(data.attributes.productName);
+      });
       // this.getProductImg()
-
     })
 
     this.api.getProductImage(2).subscribe((data) => {

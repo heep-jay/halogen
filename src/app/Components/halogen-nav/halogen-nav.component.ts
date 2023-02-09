@@ -13,12 +13,13 @@ export class HalogenNavComponent implements OnInit {
   @Input() secEduMenu: any;
   @Input() riskMenu: any;
   @Output() btnClick = new EventEmitter
-
+  hash: any;
   // activeMenu: boolean = true;
-
+  urls: any;
   constructor() { }
 
   ngOnInit(): void {
+
   }
   toggleMenu() {
     this.btnClick.emit()
@@ -29,9 +30,21 @@ export class HalogenNavComponent implements OnInit {
   redirect(url: any) {
     this.btnClick.emit()
     console.log(url)
+
     // this.activeMenu = false
     window.location.href = url
+    this.scroll()
   }
-
-
+  scroll() {
+    if (window.location.hash) {
+      this.hash = window.location.hash;
+      if (this.hash) {
+        console.log(this.hash)
+        document.getElementById(this.hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
 }
+
+
+

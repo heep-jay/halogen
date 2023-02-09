@@ -54,7 +54,7 @@
         <div class="" (click)=" aboutToggle()">
           <button class="drop-btn">About Us <mat-icon>chevron_right</mat-icon></button>
           <ul class="menu-dropdown" *ngIf="isAboutToggle">
-            <li (click)="onToggle" routerLink="/{{medMen.attributes.url}}" *ngFor="let medMen of aboutmenus">
+            <li (click)="onToggle()" routerLink="/{{medMen.attributes.url}}" *ngFor="let medMen of aboutmenus">
               <mat-icon>{{medMen.attributes.icon}}</mat-icon>{{medMen.attributes.name}}
             </li>
           </ul>
