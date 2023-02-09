@@ -26,9 +26,11 @@
     "bootstrap": "^5.2.0",
     "carousel-angular": "^1.5.3",
     "dompurify": "^2.4.3",
+    "g": "^2.0.1",
     "marked": "^4.2.12",
     "ng-multiselect-dropdown": "^1.0.0-beta.13",
     "ngx-markdown": "^15.0.0-next.0",
+    "nvm": "^0.0.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
