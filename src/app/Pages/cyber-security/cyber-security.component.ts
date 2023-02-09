@@ -22,7 +22,7 @@ export class CyberSecurityComponent implements OnInit {
   products: any;
   pImage: any;
   services: string[] = [];
-
+  hash: any;
 
   constructor(private modalService: NgbModal, private api: ApiService) { }
   open(content: any) {
@@ -35,8 +35,8 @@ export class CyberSecurityComponent implements OnInit {
   }
 
   async ngOnInit() {
-    window.scrollTo(0, 0);
-    await this.api.getProductPage(2).subscribe((data) => {
+    // window.scrollTo(0, 0);
+    this.api.getProductPage(2).subscribe((data) => {
 
       console.log(data);
       this.risks = data;
@@ -53,6 +53,15 @@ export class CyberSecurityComponent implements OnInit {
         this.services.push(data.attributes.productName);
       });
       // this.getProductImg()
+      // window.onload = function () {
+      //   if (window.location.hash) {
+
+      //     console.log(window.location.hash.slice(1))
+      //     let hash = window.location.hash.slice(1)
+      //     document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      //   }
+      // }
+
     })
 
     this.api.getProductImage(2).subscribe((data) => {
@@ -61,8 +70,8 @@ export class CyberSecurityComponent implements OnInit {
 
   }
   scrolll(data: any) {
-    console.log(data)
-    document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
+    // console.log(data)
+    // document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });
   }
 
 

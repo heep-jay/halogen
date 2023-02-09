@@ -19,6 +19,15 @@ export class HalogenNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // window.onload = function () {
+    //   if (window.location.hash) {
+    //     if (window.location.hash) {
+    //       console.log(window.location.hash.slice(1))
+    //       let hash = window.location.hash.slice(1)
+    //       document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+    //     }
+    //   }
+    // }
 
   }
   toggleMenu() {
@@ -33,9 +42,20 @@ export class HalogenNavComponent implements OnInit {
 
     // this.activeMenu = false
     window.location.href = url
-    this.scroll()
+    // if (window.location.hash) {
+    //   this.hash = window.location.hash;
+    //   if (this.hash) {
+
+    //     this.hash = String(this.hash.slice(1))
+    //     console.log(String(this.hash))
+    //     document.getElementById(this.hash)?.scrollIntoView({ behavior: "smooth" });
+    //   }
+    // }
+
+
   }
   scroll() {
+    console.log('abc')
     if (window.location.hash) {
       this.hash = window.location.hash;
       if (this.hash) {
@@ -44,6 +64,8 @@ export class HalogenNavComponent implements OnInit {
       }
     }
   }
+
+
 }
 
 

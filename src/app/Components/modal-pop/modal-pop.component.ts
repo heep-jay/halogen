@@ -26,7 +26,7 @@ export class ModalPopComponent implements OnInit {
         "customerEmail": [
           this.formEmail
         ],
-        "subject": this.formSubject
+        "subject": JSON.stringify(this.formSubject)
       },
       "halogenEmailInfo": {
         "name": this.formName,

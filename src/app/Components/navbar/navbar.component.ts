@@ -74,8 +74,7 @@ export class NavbarComponent implements OnInit {
   }
   getMenuLinks() {
     this.cybermenusL.map((data: any) => {
-
-      data.attributes.url = `https://halogenwebsite.vercel.app/cyber-security#${data.attributes.url}`
+      data.attributes.url = `http://localhost:4200/cyber-security#${data.attributes.url}`
       return this.cybermenusL;
     })
     this.outMenu.map((data: any) => {
