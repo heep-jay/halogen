@@ -42,16 +42,26 @@ export class RiskComponent implements OnInit {
         this.services.push(data.attributes.productName)
       ))
       // this.getProductImg()
-      console.log(this.banners)
     })
 
     this.api.getProductImage(1).subscribe((data) => {
-      console.log(data)
+
       this.mainImage = data.attributes.productMainImage.data.attributes.url
     })
 
 
 
+  }
+  ngAfterViewInit() {
+    if (window.location.hash) {
+      this.api.getProductPage(1).subscribe(async (data) => {
+        await data
+        let hash = window.location.hash.slice(1)
+        console.log(hash)
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      })
+
+    }
   }
 
   // getProductImg() {

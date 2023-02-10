@@ -59,6 +59,17 @@ export class PhysicalSecurityComponent implements OnInit {
     })
 
   }
+  ngAfterViewInit() {
+    if (window.location.hash) {
+      this.api.getProductPage(4).subscribe(async (data) => {
+        await data
+        let hash = window.location.hash.slice(1)
+        console.log(hash)
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      })
+
+    }
+  }
   scrolll(data: any) {
     console.log(data)
     document.getElementById(data)?.scrollIntoView({ behavior: "smooth" });

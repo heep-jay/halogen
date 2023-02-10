@@ -60,6 +60,19 @@ export class SecurityEducationComponent implements OnInit {
       this.mainImage = data.attributes.productMainImage.data.attributes.url
     })
 
+
+
+  }
+  ngAfterViewInit() {
+    if (window.location.hash) {
+      this.api.getProductPage(5).subscribe(async (data) => {
+        await data
+        let hash = window.location.hash.slice(1)
+        console.log(hash)
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      })
+
+    }
   }
   scrolll(data: any) {
     console.log(data)

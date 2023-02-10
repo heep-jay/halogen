@@ -19,7 +19,10 @@ export class HalogenNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // window.onload = function () {
+
+
+  }
+  ngAfterViewInit() {
     //   if (window.location.hash) {
     //     if (window.location.hash) {
     //       console.log(window.location.hash.slice(1))
@@ -27,9 +30,9 @@ export class HalogenNavComponent implements OnInit {
     //       document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
     //     }
     //   }
-    // }
-
+    console.log("i work")
   }
+
   toggleMenu() {
     this.btnClick.emit()
   }
