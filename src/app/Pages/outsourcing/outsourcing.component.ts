@@ -66,8 +66,12 @@ export class OutsourcingComponent implements OnInit {
       this.api.getProductPage(6).subscribe(async (data) => {
         await data
         let hash = window.location.hash.slice(1)
-        console.log(hash)
-        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        var element = document.getElementById(hash);
+        var headerOffset = 145;
+        var elementPosition = element!.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // document.getElementById(hash)?.
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       })
 
     }

@@ -37,7 +37,7 @@ export class HalogenNavComponent implements OnInit {
     this.btnClick.emit()
   }
   toElem() {
-    window.location.href = 'http://localhost:4200/security-technologies#elem'
+    window.location.href = 'https://halogenwebsite.vercel.app/security-technologies#elem'
   }
   redirect(url: any) {
     this.btnClick.emit()
